@@ -7,11 +7,14 @@ export function GET() {
     })
 }
 
-export function POST() {
+export async function POST(req: Request) {
+    //extract body
+    const body = await req.json();
+
     //database logic
+    console.log(body);
     return Response.json({
-        email:"test@gmail.com",
-        name:"test"
+        message: "User created successfully"
     })
 }
 //express code for reference
