@@ -1,6 +1,7 @@
 import axios from "axios";
 
 async function getUserData() {
+  await new Promise((resolve) => setTimeout(resolve, 3000)); // Simulate 3 seconds delay
   const response = await axios.get("https://week-13-offline.kirattechnologies.workers.dev/api/v1/user/details");
   return response.data;
   
